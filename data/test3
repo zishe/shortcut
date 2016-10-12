@@ -1,0 +1,52 @@
+9 36 2
+
+Moscow 55.755833 37.617778
+Dubai 25.269722 55.309444
+Doha 25.286667 51.533333
+New_Delhi 28.613889 77.208889
+Bangkok 13.75 100.466667
+Kuala_Lumpur 3.133333 101.683333
+Singapore 1.35 103.85
+Sydney -33.865 151.209444
+New_York_City 40.7127 -74.0059
+
+Moscow Dubai
+Moscow Doha
+Moscow New_York_City
+Dubai Moscow
+Dubai Doha
+Dubai New_Delhi
+Dubai Kuala_Lumpur
+Dubai Singapore
+Dubai Dubai
+Dubai New_York_City
+Doha Moscow
+Doha Dubai
+Doha New_Delhi
+Doha Singapore
+Doha New_York_City
+New_Delhi Doha
+New_Delhi Dubai
+New_Delhi Bangkok
+New_Delhi Singapore
+Bangkok New_Delhi
+Bangkok Kuala_Lumpur
+Bangkok Sydney
+Bangkok New_Delhi
+Bangkok New_York_City
+Kuala_Lumpur Dubai
+Kuala_Lumpur Doha
+Kuala_Lumpur Bangkok
+Kuala_Lumpur New_York_City
+Kuala_Lumpur Sydney
+New_York_City Moscow
+New_York_City Dubai
+New_York_City Doha
+New_York_City Bangkok
+New_York_City Kuala_Lumpur
+New_York_City Singapore
+New_York_City Sydney
+
+Moscow Bangkok
+Moscow Sydney
+

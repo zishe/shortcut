@@ -58,6 +58,7 @@ module PathFinder
             if new_route.completed?
               # принимаем результат если  нет ни одного пути  или  новый путь короче существующего
               shortcut = new_route if shortcut.nil? || new_route.length < shortcut.length
+              puts "new route #{new_route} #{new_route.length}"
             else
               next_routes << new_route unless shortcut && shortcut.length < new_route.length
             end
@@ -70,7 +71,7 @@ module PathFinder
         curr_step += 1
       end
 
-      puts shortcut.nil? ? 'no route exists' : "#{shortcut.length.round} km"
+      puts shortcut.nil? ? 'no route exists' : "#{shortcut.length.round} km (#{shortcut})"
       shortcut
     end
   end
