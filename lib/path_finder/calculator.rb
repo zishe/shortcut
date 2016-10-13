@@ -27,39 +27,40 @@ module PathFinder
     end
 
     def build_routes
-      @routes.each { |path| build_route path }
+      @routes.each { |path|
+        route = build_route path
+        puts route.nil? ? 'no route exists' : "#{route.length.round} km"
+      }
     end
 
     def build_route(path)
-      curr_step = 0
-
       routes = [path]
       next_routes = []
       shortcut = nil
 
-      # пока есть незавершенные маршруты И количество шагов маньше количства городов - 1
-      while routes.any? && curr_step < cities.size - 1
+      # while there are unfinished flights
+      while routes.any?
         routes.each do |route|
-          # найти все маршруты начинающиеся в последнем городе строящегося маршрута
-          match_flights = @flights.select { |flight| flight.start == route.current }
-
-          # puts "#{match_flights.size} match flights"
+          # search all flights started from current city
+          match_flights = @flights.select { |flight| flight.src == route.current }
           match_flights.each do |match_flight|
-            # исключаем зацикленный машрут
-            next if match_flight.end == route.start
+            # exclude looped route
+            next if match_flight.dst == route.src
 
-            # не проходим джажды один и тот же город дважды
-            next if route.past_cities.include? match_flight.end
+            # don't pass twice the same city
+            next if route.past_cities.include? match_flight.dst
 
-            new_route = Route.new([route.start, route.end])
+            # copy route to a new one and add new flight
+            new_route = Route.new([route.src, route.dst])
             route.flights.each { |f| new_route.add_flight f }
             new_route.add_flight match_flight
 
             if new_route.completed?
-              # принимаем результат если  нет ни одного пути  или  новый путь короче существующего
+              # accept the result if there is no path or a new path is shorter than the existing
               shortcut = new_route if shortcut.nil? || new_route.length < shortcut.length
-              puts "new route #{new_route} #{new_route.length}"
+              # puts "new route #{new_route} #{new_route.length}"
             else
+              # continue to build the route unless it's already longer then existing route
               next_routes << new_route unless shortcut && shortcut.length < new_route.length
             end
           end
@@ -67,11 +68,8 @@ module PathFinder
 
         routes = next_routes
         next_routes = []
-
-        curr_step += 1
       end
 
-      puts shortcut.nil? ? 'no route exists' : "#{shortcut.length.round} km (#{shortcut})"
       shortcut
     end
   end

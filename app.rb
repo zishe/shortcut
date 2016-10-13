@@ -1,6 +1,6 @@
 require './lib/path_finder'
 
-input = File.readlines('data/test3').map(&:strip).reject(&:empty?)
+input = File.readlines('data/test2').map(&:strip).reject(&:empty?)
 
 n, m, q = input.shift.split.map(&:to_i)
 

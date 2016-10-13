@@ -1,19 +1,19 @@
 module PathFinder
   class Flight
-    attr_accessor :start, :end
+    attr_accessor :src, :dst
 
     def initialize(input)
-      @start, @end = input
+      @src, @dst = input
     end
 
     def length
       @length ||= DistanceCalculator.calculate(
-        *[@start.lat, @start.lon, @end.lat, @end.lon].map(&:to_rad)
+        *[@src.lat, @src.lon, @dst.lat, @dst.lon].map(&:to_rad)
       )
     end
 
     def to_s
-      [@start.to_s, @end.to_s].join ' -> '
+      [@src.to_s, @dst.to_s].join ' -> '
     end
   end
 end

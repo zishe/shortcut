@@ -1,10 +1,10 @@
 module PathFinder
   class Route
-    attr_accessor :start, :end, :flights, :current, :past_cities
+    attr_accessor :src, :dst, :flights, :current, :past_cities
 
     def initialize(input)
-      @start, @end = input
-      @current = @start
+      @src, @dst = input
+      @current = @src
       @past_cities = []
       @flights = []
       @complete = false
@@ -12,16 +12,10 @@ module PathFinder
 
     def add_flight(flight)
       @flights << flight
-      @current = flight.end
+      @current = flight.dst
       @past_cities << @current
-      @complete = true if @current.name == @end.name
+      @complete = true if @current.name == @dst.name
     end
-
-    # def self.copy(route)
-    #   new_route = Route.new([route.start, route.end])
-    #   route.flights.each { |f| new_route.add_flight f }
-    #   new_route
-    # end
 
     def completed?
       @complete
@@ -35,7 +29,7 @@ module PathFinder
       if flights.any?
         flights.map(&:to_s).join ' | '
       else
-        [@start.to_s, @end.to_s].join ' -> '
+        [@src.to_s, @dst.to_s].join ' -> '
       end
     end
   end
