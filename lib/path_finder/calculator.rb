@@ -27,10 +27,7 @@ module PathFinder
     end
 
     def build_routes
-      @routes.each { |path|
-        route = build_route path
-        puts route.nil? ? 'no route exists' : "#{route.length.round} km"
-      }
+      @routes.map { |path| build_route path }
     end
 
     def build_route(path)
