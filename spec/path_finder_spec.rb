@@ -1,6 +1,6 @@
 require './lib/path_finder'
 
-describe PathFinder::Calculator do
+describe PathFinder::App do
   describe '.build_routes' do
     it '"returns proper data for test_data"' do
       input = File.readlines('test_data').map(&:strip).reject(&:empty?)
@@ -14,7 +14,7 @@ describe PathFinder::Calculator do
         numbers = case_start.scan(/\d+/).map(&:to_i)
         next unless numbers.reduce(:+) > 0 && numbers.size == 3
 
-        calc = PathFinder::Calculator.new
+        calc = PathFinder::App.new
         n, m, q = numbers
         n.times { calc.add_city(input.shift) }
         m.times { calc.add_flight(input.shift) }

@@ -1,5 +1,5 @@
 module PathFinder
-  class Calculator
+  class App
     attr_accessor :cities, :flights, :routes
 
     def initialize

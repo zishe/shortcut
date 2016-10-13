@@ -12,7 +12,7 @@ while input.any?
 
   puts "Case ##{i}"
 
-  calc = PathFinder::Calculator.new
+  calc = PathFinder::App.new
   n, m, q = numbers
   n.times { calc.add_city(input.shift) }
   m.times { calc.add_flight(input.shift) }
