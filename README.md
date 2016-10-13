@@ -1,3 +1,9 @@
 ### Programming Challenge – Scared of flying
 
-`rspec spec` to test
+Run app with:
+
+`$ ruby app.rb`
+
+Test app with:
+
+`$ rspec spec`
