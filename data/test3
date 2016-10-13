@@ -1,4 +1,4 @@
-9 36 3
+9 40 3
 
 Moscow 55.755833 37.617778
 Dubai 25.269722 55.309444
@@ -18,11 +18,11 @@ Dubai Doha
 Dubai New_Delhi
 Dubai Kuala_Lumpur
 Dubai Singapore
-Dubai Dubai
 Dubai New_York_City
 Doha Moscow
 Doha Dubai
 Doha New_Delhi
+Doha Kuala_Lumpur
 Doha Singapore
 Doha New_York_City
 New_Delhi Doha
@@ -39,6 +39,10 @@ Kuala_Lumpur Doha
 Kuala_Lumpur Bangkok
 Kuala_Lumpur New_York_City
 Kuala_Lumpur Sydney
+Singapore Doha
+Singapore Kuala_Lumpur
+Singapore New_York_City
+Singapore Sydney
 New_York_City Moscow
 New_York_City Dubai
 New_York_City Doha

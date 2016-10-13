@@ -22,17 +22,19 @@ module PathFinder
         distances[vertex] = nil # Infinity
         previouses[vertex] = nil
       end
-
       distances[src] = 0
+
       vertices = self.clone
       until vertices.empty?
         nearest_vertex = vertices.reduce do |a, b|
-          # p "#{a} #{b} #{distances[a]} #{distances[b]}"
           next b unless distances[a]
           next a unless distances[b]
           next a if distances[a] < distances[b]
           b
         end
+        puts "   "
+        puts "nearest_vertex       -   #{nearest_vertex}"
+
         break unless distances[nearest_vertex] # Infinity
 
         if dst && nearest_vertex == dst
@@ -44,7 +46,10 @@ module PathFinder
           alt = distances[nearest_vertex] + vertices.length_between(nearest_vertex, vertex)
           if distances[vertex].nil? || alt < distances[vertex]
             distances[vertex] = alt
+            puts "vertex               -   #{vertex}"
+            puts "distances[vertex]    -   #{alt}"
             previouses[vertex] = nearest_vertex
+            puts "previouses[vertex]   -   #{nearest_vertex}"
           end
         end
         vertices.delete nearest_vertex
@@ -64,7 +69,6 @@ module PathFinder
       path.is_a?(Array) ? path.reverse : path
     end
 
-    # Unroll through previouses array until we get to source
     def get_path_recursively(previouses, src, dst)
       return src if src == dst
       raise ArgumentException, "No path from #{src} to #{dst}" if previouses[dst].nil?
