@@ -4,6 +4,7 @@ require './lib/path_finder/city'
 require './lib/path_finder/flight'
 require './lib/path_finder/route'
 require './lib/path_finder/calculator'
+require './lib/path_finder/graph'
 
 module PathFinder
 
