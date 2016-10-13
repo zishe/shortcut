@@ -40,17 +40,17 @@ module PathFinder
         routes.each do |route|
           # search all flights started from current city
           match_flights = @flights.select { |flight| flight.src == route.current }
-          match_flights.each do |match_flight|
+          match_flights.each do |flight|
             # exclude looped route
-            next if match_flight.dst == route.src
+            next if flight.dst == route.src
 
             # don't pass twice the same city
-            next if route.past_cities.include? match_flight.dst
+            next if route.past_cities.include? flight.dst
 
             # copy route to a new one and add new flight
             new_route = Route.new([route.src, route.dst])
             route.flights.each { |f| new_route.add_flight f }
-            new_route.add_flight match_flight
+            new_route.add_flight flight
 
             if new_route.completed?
               # accept the result if there is no path or a new path is shorter than the existing

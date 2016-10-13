@@ -1,15 +1,27 @@
 require './lib/path_finder'
 
-input = File.readlines('data/test3').map(&:strip).reject(&:empty?)
+input = File.readlines('test_data').map(&:strip).reject(&:empty?)
 
-n, m, q = input.shift.split.map(&:to_i)
+i = 1
+while input.any?
+  case_start = input.shift
+  next unless case_start =~ /\d+\s+/
 
-calc = PathFinder::Calculator.new
+  numbers = case_start.scan(/\d+/).map(&:to_i)
+  next unless numbers.reduce(:+) > 0 && numbers.size == 3
 
-n.times { calc.add_city(input.shift) }
-m.times { calc.add_flight(input.shift) }
-q.times { calc.add_route(input.shift) }
+  puts "Case ##{i}"
 
-calc.build_routes.each do |route|
-  puts route.nil? ? 'no route exists' : "#{route.length.round} km"
+  calc = PathFinder::Calculator.new
+  n, m, q = numbers
+  n.times { calc.add_city(input.shift) }
+  m.times { calc.add_flight(input.shift) }
+  q.times { calc.add_route(input.shift) }
+
+  calc.build_routes.each do |route|
+    puts route.nil? ? 'no route exists' : "#{route.length.round} km"
+  end
+
+  i += 1
+  puts ''
 end
