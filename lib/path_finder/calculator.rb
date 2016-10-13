@@ -55,7 +55,6 @@ module PathFinder
             if new_route.completed?
               # accept the result if there is no path or a new path is shorter than the existing
               shortcut = new_route if shortcut.nil? || new_route.length < shortcut.length
-              # puts "new route #{new_route} #{new_route.length}"
             else
               # continue to build the route unless it's already longer then existing route
               next_routes << new_route unless shortcut && shortcut.length < new_route.length
