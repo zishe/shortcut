@@ -11,7 +11,7 @@ describe PathFinder::Calculator do
     end
 
     it '"returns proper data for test3"' do
-      exec_from_file 'test3', [8803, 15844]
+      exec_from_file 'test3', [8803, 15841, 13219]
     end
   end
 
