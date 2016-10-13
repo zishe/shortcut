@@ -48,8 +48,7 @@ module PathFinder
             next if route.past_cities.include? flight.dst
 
             # copy route to a new one and add new flight
-            new_route = Route.new([route.src, route.dst])
-            route.flights.each { |f| new_route.add_flight f }
+            new_route = Route.copy route
             new_route.add_flight flight
 
             if new_route.completed?

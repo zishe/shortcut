@@ -10,6 +10,12 @@ module PathFinder
       @complete = false
     end
 
+    def self.copy(route)
+      new_route = Route.new([route.src, route.dst])
+      route.flights.each { |f| new_route.add_flight f }
+      new_route
+    end
+
     def add_flight(flight)
       @flights << flight
       @current = flight.dst
