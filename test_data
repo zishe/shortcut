@@ -1,0 +1,85 @@
+3 4 2
+Dhaka 23.8500 90.4000
+Chittagong 22.2500 91.8333
+Calcutta 22.5333 88.3667
+Dhaka Calcutta
+Calcutta Dhaka
+Dhaka Chittagong
+Chittagong Dhaka
+Chittagong Calcutta
+Dhaka Chittagong
+
+5 6 3
+Baghdad 33.2333 44.3667
+Dhaka 23.8500 90.4000
+Frankfurt 50.0330 8.5670
+Hong_Kong 21.7500 115.0000
+Tokyo 35.6833 139.7333
+Baghdad Dhaka
+Dhaka Frankfurt
+Tokyo Hong_Kong
+Hong_Kong Dhaka
+Baghdad Tokyo
+Frankfurt Tokyo
+Dhaka Hong_Kong
+Frankfurt Baghdad
+Baghdad Frankfurt
+
+0 0 0
+
+9 40 3
+
+Moscow 55.755833 37.617778
+Dubai 25.269722 55.309444
+Doha 25.286667 51.533333
+New_Delhi 28.613889 77.208889
+Bangkok 13.75 100.466667
+Kuala_Lumpur 3.133333 101.683333
+Singapore 1.35 103.85
+Sydney -33.865 151.209444
+New_York_City 40.7127 -74.0059
+
+Moscow Dubai
+Moscow Doha
+Moscow New_York_City
+Dubai Moscow
+Dubai Doha
+Dubai New_Delhi
+Dubai Kuala_Lumpur
+Dubai Singapore
+Dubai New_York_City
+Doha Moscow
+Doha Dubai
+Doha New_Delhi
+Doha Kuala_Lumpur
+Doha Singapore
+Doha New_York_City
+New_Delhi Doha
+New_Delhi Dubai
+New_Delhi Bangkok
+New_Delhi Singapore
+Bangkok New_Delhi
+Bangkok Kuala_Lumpur
+Bangkok Sydney
+Bangkok New_Delhi
+Bangkok New_York_City
+Kuala_Lumpur Dubai
+Kuala_Lumpur Doha
+Kuala_Lumpur Bangkok
+Kuala_Lumpur New_York_City
+Kuala_Lumpur Sydney
+Singapore Doha
+Singapore Kuala_Lumpur
+Singapore New_York_City
+Singapore Sydney
+New_York_City Moscow
+New_York_City Dubai
+New_York_City Doha
+New_York_City Bangkok
+New_York_City Kuala_Lumpur
+New_York_City Singapore
+New_York_City Sydney
+
+Moscow Bangkok
+Moscow Sydney
+New_York_City New_Delhi
